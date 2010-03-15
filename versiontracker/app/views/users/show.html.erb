@@ -1,0 +1,20 @@
+<h1>Listing components</h1>
+<h5> Your Api Key is <%=h @user.single_access_token %> </h5>
+<table>
+  <tr>
+    <th>Component</th>
+    <th>Version</th>
+  </tr>
+<% @a.each do |version| %>
+  <tr>
+    <td>
+    	<%=h version["component_name"] %>
+    </td>
+    <td>
+    <%=h version["version_num"] %>
+    </td>
+  </tr>
+<% end %>
+
+</table>
+

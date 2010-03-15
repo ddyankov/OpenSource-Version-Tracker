@@ -1,0 +1,18 @@
+<p>
+  <b>Date:</b>
+  <%=h @signature.date %>
+</p>
+
+<p>
+  <b>Score:</b>
+  <%=h @signature.score %>
+</p>
+
+<p>
+  <b>Id:</b>
+  <%=h @signature.id %>
+</p>
+
+
+<%= link_to 'Edit', edit_signature_path(@signature) %> |
+<%= link_to 'Back', signatures_path %>

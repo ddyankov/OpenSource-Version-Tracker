@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @component.name %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%=h @component.type %>
+</p>
+
+
+<%= link_to 'Edit', edit_component_path(@component) %> |
+<%= link_to 'Back', components_path %>

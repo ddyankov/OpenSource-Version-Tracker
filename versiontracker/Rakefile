@@ -1,0 +1,32 @@
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+
+require(File.join(File.dirname(__FILE__), 'config', 'boot'))
+
+require 'rake'
+require 'rake/testtask'
+require 'rake/rdoctask'
+
+require 'tasks/rails'
+
+spec = Gem::Specification.new do |s| 
+  s.name = "OSVT"
+  s.version = "1.0.0"
+  s.author = "Team FOSS"
+  s.email = "osvt@gmail.com"
+  s.homepage = "http://osvt.heroku.org"
+  s.platform = Gem::Platform::RUBY
+  s.summary = "Some description"
+  s.files = FileList["{bin,lib}/**/*"].to_a
+  s.require_path = "lib"
+  s.autorequire = "name"
+  s.test_files = FileList["{test}/**/*osvt_plugin.rb"].to_a
+  s.has_rdoc = true
+  s.extra_rdoc_files = ["README"]
+  s.add_dependency("dependency", ">= 0.x.x")
+end
+ 
+Rake::GemPackageTask.new(spec) do |pkg| 
+  pkg.need_tar = true 
+end 
+

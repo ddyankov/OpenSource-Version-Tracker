@@ -1,0 +1,9 @@
+<h1>Update Account</h1>
+<h3>Your API Key: <b><%=h @user.single_access_token  %></b></h3>
+<% form_for @user, :url => account_path do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => "form", :object => f %>
+  <%= f.submit "Update" %>
+<% end %>
+
+

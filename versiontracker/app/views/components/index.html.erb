@@ -1,0 +1,22 @@
+<h1>Listing components</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+  </tr>
+
+<% @components.each do |component| %>
+  <tr>
+    <td><%=h component.name %></td>
+    <td><%=h component.c_type %></td>
+    <td><%= link_to 'Show', component %></td>
+    <td><%= link_to 'Edit', edit_component_path(component) %></td>
+    <td><%= link_to 'Destroy', component, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New component', new_component_path %>

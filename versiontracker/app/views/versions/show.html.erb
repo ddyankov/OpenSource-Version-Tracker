@@ -1,0 +1,13 @@
+<p>
+  <b>Version num:</b>
+  <%=h @version.version_num %>
+</p>
+
+<p>
+  <b>Id:</b>
+  <%=h @version.id %>
+</p>
+
+
+<%= link_to 'Edit', edit_version_path(@version) %> |
+<%= link_to 'Back', versions_path %>

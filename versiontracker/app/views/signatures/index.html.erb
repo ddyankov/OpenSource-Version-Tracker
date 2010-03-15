@@ -1,0 +1,24 @@
+<h1>Listing signatures</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Score</th>
+    <th>Id</th>
+  </tr>
+
+<% @signatures.each do |signature| %>
+  <tr>
+    <td><%=h signature.date %></td>
+    <td><%=h signature.score %></td>
+    <td><%=h signature.id %></td>
+    <td><%= link_to 'Show', signature %></td>
+    <td><%= link_to 'Edit', edit_signature_path(signature) %></td>
+    <td><%= link_to 'Destroy', signature, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New signature', new_signature_path %>
